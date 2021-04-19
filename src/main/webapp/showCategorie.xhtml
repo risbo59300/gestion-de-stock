@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui">
+
+	<h:head></h:head>
+	
+	<body> 
+	<p:layout fullPage="true">
+	
+		<p:layoutUnit position="north" size="200">
+
+			<marquee> <h:outputText style="color:blue" value="Bienvenue dans notre magasin" /></marquee>
+			<ui:include src="/menuHNordAdmin.xhtml" />
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="south" size="100">
+			<h:outputText value="Copyright 2021." />+
+			<ui:include src="/menuHSud.xhtml" />
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="west" size="200"
+			style="width:200;border-width:1px;">
+			<ui:include src="/menuWest.xhtml" /> 
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="center" style="width:200; border-width:0px;">
+		<h:form >
+		<p:dataTable value="#{categorieMBean.listCategories}" var="cate" selection="#{categorieMBean.selectcat}" selectionMode="single" rowKey="#{cate.idcateg}">
+		
+	<p:column headerText="Id Catégorie"> 
+	<h:outputText value="#{cate.idcateg}" />
+	</p:column>
+	
+	<p:column headerText="Code"> 
+	<h:outputText value="#{cate.codecateg}" />
+	</p:column>
+	
+	<p:column headerText="Libellé "> 
+	<h:outputText value="#{cate.libellecateg}" />
+	</p:column>
+	
+	<p:column headerText="Supprimer"> 
+	<p:commandButton actionListener="#{categorieMBean.deleteCategorie}" value="Supprimer" />
+	</p:column>
+	
+	<p:column headerText="Modifier"> 
+	<p:commandButton value="Editer" oncomplete="PF('dlgUpdate').show()" update="Myformca:dlgUpdate" />
+	</p:column>
+	
+<p:growl ></p:growl>
+</p:dataTable>
+</h:form>
+		
+	<h:form id="Myformca">
+	<p:growl ></p:growl>
+	<p:dialog id="dlgUpdate" widgetVar="dlgUpdate">
+	<p:panelGrid columns="2">
+	
+	<h:outputText value="Id Categorie" />
+	<h:outputText value="#{categorieMBean.selectcat.idcateg}" />
+	
+	<h:outputText value="Code categorie" />
+	<h:inputText value="#{categorieMBean.selectcat.codecateg}" />
+	
+	<h:outputText value="Libéllé catégorie" />
+	<h:inputText value="#{categorieMBean.selectcat.libellecateg}" />
+ 
+ 	<h:commandButton actionListener="#{categorieMBean.updateCategorie}" value="Modifier" />
+ 
+  </p:panelGrid>
+  </p:dialog>
+  </h:form>
+		</p:layoutUnit>
+	</p:layout>
+</body> 
+</html>

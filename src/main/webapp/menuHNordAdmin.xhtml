@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+ <style type="text/css">
+            .ui-layout-north {
+                z-index:20 !important;
+                overflow:visible !important;;
+            }
+            .ui-layout-north .ui-layout-unit-content {
+                overflow:visible !important;
+            }
+            
+            body {
+                background-color: #FFFFFF;
+            }
+        </style>
+</h:head> 
+<body> 
+
+<h:form>
+
+<p:menubar>
+
+<p:submenu label="Gestion Produit">
+<p:menuitem value="Nouveau Produit" url="newProduitAdmin.xhtml"/>
+<p:menuitem value="Consulter Produit" url="showProduitAdmin.xhtml" />
+</p:submenu>
+
+<p:submenu label="Gestion Client">
+<p:menuitem value="Nouveau Client" url="newClientAdmin.xhtml" />
+<p:menuitem value="Liste des Clients" url="showClientAdmin.xhtml" />
+</p:submenu>
+
+<p:submenu label="Gestion Commande">
+<p:menuitem value="Nouvelle Commande" url="newCommandeAdmin.xhtml" />
+<p:menuitem value="Liste des Commandes" url="showCommandeAdmin.xhtml" />
+</p:submenu>
+
+<p:submenu label="Catégorie">
+<p:menuitem value="Nouvelle Catégorie" url="newCategorie.xhtml" />
+<p:menuitem value="Liste de Catégorie" url="showCategorie.xhtml" />
+</p:submenu>
+
+<p:submenu label="Gestion Utilisateur">
+<p:menuitem value="Ajout Utilisateur" url="newUser.xhtml" />
+<p:menuitem value="Liste des Utilisateur" url="showUsers.xhtml" />
+</p:submenu>
+
+<p:submenu icon="disquette-icon.png" label="Telechargement">
+<p:menuitem value="Forum"  />
+<p:menuitem value="Wiki"  />
+<p:menuitem value="User group"  />
+<p:menuitem value="Blog" />
+</p:submenu>
+
+<p:submenu icon="images/Pinion-icon.png" label="Actualités" >
+<p:menuitem value="Français"  />
+<p:menuitem value="Anglais"  />
+</p:submenu>
+
+</p:menubar> 
+
+<h:outputLink value="login.xhtml" >
+    <h:outputText value="Se déconnecté" style="font-size:25px; position:absolute; right:20px; color:blue"  />
+</h:outputLink>
+
+</h:form>
+
+</body> 
+</html>

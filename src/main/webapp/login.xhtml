@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+
+<h:head></h:head> 
+<body> 
+	<p:layout fullPage="true">
+	
+		<p:layoutUnit position="north" size="80">
+
+			
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="south" size="100">
+			<h:outputText value="Copyright 2012." />
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="west" size="200"
+			style="width:200;border-width:1px;">
+		</p:layoutUnit>
+		
+		<p:layoutUnit position="east" size="200"
+			style="width:200;border-width:1px;">
+		</p:layoutUnit>
+	
+		<p:layoutUnit position="center" style="width:200; border-width:0px;">
+	<center>		
+		<h:form>
+		<p:growl id=""></p:growl>
+		
+		<p:panel header="Authentification">
+		
+		<p:panelGrid columns="3">
+		
+		<h:outputText value="Nom d'utilisateur" />
+		<p:inputText id="username" value="#{userMBean.username}" required="true" requiredMessage="Identifiant obligatoire"></p:inputText>
+		<h:message for="username" style="color:red"/>
+		
+		<h:outputText value="Mot de passe" />
+		<p:password id="pwd" value="#{userMBean.pwd}" required="true" requiredMessage="mot de passe obligatoire"></p:password> 
+		<h:message for="pwd" style="color:red"/>
+		
+		<h:commandButton value="login" actionListener="#{userMBean.login}" ></h:commandButton>
+		
+		<h:commandButton value="Annuler" type="reset"></h:commandButton>
+		
+		</p:panelGrid>
+		
+		</p:panel>
+		</h:form>
+		
+    </center>  
+		</p:layoutUnit>
+	</p:layout>
+</body> 
+</html>

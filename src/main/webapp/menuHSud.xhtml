@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+<h:form>
+	
+	<p:tabMenu activeIndex="#{param.i}" style="position:absolute; right:0">
+	<center>
+        <p:menuitem value="Accueil" >
+            <f:param name="i" value="0"/>
+        </p:menuitem>
+        <p:menuitem value="Nous Contacter" >
+            <f:param name="i" value="1"/>
+        </p:menuitem>
+        <p:menuitem value="Espace Partenaires" >
+            <f:param name="i" value="2"/>
+        </p:menuitem>
+        <p:menuitem value="Espace Clients" >
+            <f:param name="i" value="3"/>
+        </p:menuitem>
+        <p:menuitem value="Anglais" >
+            <f:param name="i" value="4"/>
+        </p:menuitem>
+        
+    </center>
+    </p:tabMenu> 
+    
+</h:form>
+
+</body> 
+</html>
